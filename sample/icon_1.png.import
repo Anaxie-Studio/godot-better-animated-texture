@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.svg-a56fcf67cc2e1adebff91f2f714d75ce.stex"
+path="res://.import/icon_1.png-0b1b0b3155c6a0da495f92209e4568b0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/godot-better-animated-texture/icon.svg"
-dest_files=[ "res://.import/icon.svg-a56fcf67cc2e1adebff91f2f714d75ce.stex" ]
+source_file="res://addons/godot-better-animated-texture/sample/icon_1.png"
+dest_files=[ "res://.import/icon_1.png-0b1b0b3155c6a0da495f92209e4568b0.stex" ]
 
 [params]
 
@@ -20,15 +20,15 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
