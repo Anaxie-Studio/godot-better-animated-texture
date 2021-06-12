@@ -22,26 +22,30 @@ func set_sprites_dir(new_sprites_dir: String):
 		dir.list_dir_begin()
 
 		var file_name: String = dir.get_next()
+		var texture_id: int = -1
 		while file_name:
 			var name_extension_split: PoolStringArray = (
 				file_name.rsplit(".", true, 1)
 			)
 
 			if (name_extension_split[1] in ALLOWED_FILE_EXTENSIONS):
-				var texture_id: int = int(
-					name_extension_split[0].rsplit("_", true, 1)[1]
+				var texture_id_split: Array = name_extension_split[0].rsplit(
+					"_", true, 1
 				)
+
+				if (texture_id_split.size() >= 2 and
+						texture_id_split[1].is_valid_integer()):
+					texture_id = int(texture_id_split[1])
+				else:
+					texture_id += 1
 
 				if texture_id + 1 > frames:
-					frames = texture_id + 1
+						frames = texture_id + 1
 
-				var texture_path: String = (
-					"%s/%s" % [sprites_dir, file_name]
+				set_frame_texture(
+					texture_id,
+					load("%s/%s" % [sprites_dir, file_name])
 				)
-
-				var texture: Texture = load(texture_path)
-
-				set_frame_texture(texture_id, texture)
 
 			file_name = dir.get_next()
 
